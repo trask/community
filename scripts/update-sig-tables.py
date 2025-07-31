@@ -46,11 +46,11 @@ for group in data:
 
     # Table headers
     if group_name == "Specification SIGs":
-        markdown_content += "| Name | Meeting Time | Meeting Notes | Slack Channel | Meeting Invites Group | [Sponsors](./project-management.md#project-proposal) | [Governance Committee](./community-members.md#governance-committee) Liaison |\n"
-        markdown_content += "|------|--------------|---------------|---------------|-----------------|--------------------------------|--------------------------------|\n"
+        markdown_content += "| Name | Meetings | Slack Channel | Meeting Invites Group | [Sponsors](./project-management.md#project-proposal) | [Governance Committee](./community-members.md#governance-committee) Liaison |\n"
+        markdown_content += "|------|----------|---------------|-----------------|--------------------------------|--------------------------------|\n"
     else:
-        markdown_content += "| Name | Meeting Time | Meeting Notes | Slack Channel | Meeting Invites Group | [Governance Committee](./community-members.md#governance-committee) Liaison |\n"
-        markdown_content += "|------|--------------|---------------|---------------|-----------------|--------------------------------|\n"
+        markdown_content += "| Name | Meetings | Slack Channel | Meeting Invites Group | [Governance Committee](./community-members.md#governance-committee) Liaison |\n"
+        markdown_content += "|------|----------|---------------|-----------------|--------------------------------|\n"
 
     # Table rows for SIGs
     for sig in group['sigs']:
@@ -90,15 +90,25 @@ for group in data:
         else:
             notes = notes_value
         
+        # Combine meeting time and notes
+        if meeting and notes:
+            meetings_combined = f"{meeting}<br/>{notes}"
+        elif meeting:
+            meetings_combined = meeting
+        elif notes:
+            meetings_combined = notes
+        else:
+            meetings_combined = ""
+        
         if invites == "none":
             calendar = ""
         else:
             calendar = f"[{invites}](https://groups.google.com/a/opentelemetry.io/g/{invites})"
         
         if group_name == "Specification SIGs":
-            markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meeting} | {notes} | {chats} | {calendar} | {tc_sponsors} | {gc_liaison} | \n"
+            markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meetings_combined} | {chats} | {calendar} | {tc_sponsors} | {gc_liaison} | \n"
         else:
-            markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meeting} | {notes} | {chats} | {calendar} | {gc_liaison} |\n"
+            markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meetings_combined} | {chats} | {calendar} | {gc_liaison} |\n"
 
     # Add a newline for spacing after the table
     markdown_content += "\n"
