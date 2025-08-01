@@ -44,8 +44,7 @@ for group in data:
     group_name = group['name']
     markdown_content += f"### {group_name}\n\n"
 
-    # Table headers
-    markdown_content += "<small>\n\n"
+    # Table headers (removing unsupported CSS styling)
     markdown_content += "| Name | Meeting Information | Slack Channel | Repositories |\n"
     markdown_content += "|------|---------------------|---------------|-------------|\n"
 
@@ -106,8 +105,8 @@ for group in data:
         
         markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meeting_info} | {chats} | {repos_formatted} |\n"
 
-    # Close the small tag and add a newline for spacing after the table
-    markdown_content += "\n</small>\n\n"
+    # Add spacing after the table
+    markdown_content += "\n\n"
 
 markdown_content += end_marker
 

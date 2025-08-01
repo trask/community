@@ -128,8 +128,6 @@ SIG-specific GitHub discussions.
 <!-- sigs -->
 ### Specification SIGs
 
-<small>
-
 | Name | Meeting Information | Slack Channel | Repositories |
 |------|---------------------|---------------|-------------|
 | <a id="sig-specification"></a>Specification: General + OTel Maintainers Sync | **Time:** Tuesday at 08:00 PT<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/1pdvPeKjA8v8w_fGKAN68JjWBmVJtPCpqdi9IZrd6eEo)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-spec-general) | [#otel-specification](https://cloud-native.slack.com/archives/C01N7PP1THC) | [opentelemetry-specification](https://github.com/open-telemetry/opentelemetry-specification)<br/>[opentelemetry-proto](https://github.com/open-telemetry/opentelemetry-proto)<br/>[build-tools](https://github.com/open-telemetry/build-tools) |
@@ -150,11 +148,8 @@ SIG-specific GitHub discussions.
 | <a id="sig-mainframes"></a>OpenTelemetry on Mainframes | **Time:** Wednesday at 10:00 PT<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/14p-bpofozTL4n3jy6HZH_TKjoOXvog18G1HBRqq6liE)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-mainframe) | [#otel-mainframes](https://cloud-native.slack.com/archives/C05PXDFTCPJ) |  |
 | <a id="sig-client-side-telemetry"></a>Client Instrumentation | **Time:** Every other Tuesday at 09:00 PT<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/16Vsdh-DM72AfMg_FIt9yT9ExEWF4A_vRbQ3jRNBe09w)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-client-side) | [#otel-client-side-telemetry](https://cloud-native.slack.com/archives/C0239SYARD2) |  |
 
-</small>
 
 ### Implementation SIGs
-
-<small>
 
 | Name | Meeting Information | Slack Channel | Repositories |
 |------|---------------------|---------------|-------------|
@@ -182,11 +177,8 @@ SIG-specific GitHub discussions.
 | <a id="sig-community-demo"></a>Community Demo Application | **Time:** Wednesday at 08:00 PT<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/16f-JOjKzLgWxULRxY8TmpM_FjlI1sthvKurnqFz9x98)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-demo-app) | [#otel-community-demo](https://cloud-native.slack.com/archives/C03B4CWV4DA) | [opentelemetry-demo](https://github.com/open-telemetry/opentelemetry-demo) |
 | <a id="sig-weaver"></a>Semantic Conventions: Tooling | **Time:** Wednesday at 07:00 PT<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/1ygwXgOFRF01UfUOgMr_ElyL7fSDPchTKSrqfj-_HeyA)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-semconv) | [#otel-weaver](https://cloud-native.slack.com/archives/C0697EXNTL3) | [weaver](https://github.com/open-telemetry/weaver) |
 
-</small>
 
 ### Cross-Cutting SIGs
-
-<small>
 
 | Name | Meeting Information | Slack Channel | Repositories |
 |------|---------------------|---------------|-------------|
@@ -197,11 +189,8 @@ SIG-specific GitHub discussions.
 | <a id="sig-contributor-experience"></a>Contributor Experience | **Time:** Monday alternating between 10:00 PT and 17:00 UTC+8<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/1CTQI0p3QF8JP8reV8z_ggcs8KE5YVPpQGvAQknw4qP0)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-contributor-experience) | [#otel-contributor-experience](https://cloud-native.slack.com/archives/C06TMJ2R0SK) | [sig-contributor-experience](https://github.com/open-telemetry/sig-contributor-experience) |
 | <a id="sig-devex"></a>Developer Experience | **Time:** Wednesday 11:00 PT and 17:00 UTC+8<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/1QDZYAvGJbqgodJaTxRPmRZh-fEJjb6XstvPUst6h50w)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-developer-experience) | [#otel-devex](https://cloud-native.slack.com/archives/C01S42U83B2) | [sig-developer-experience](https://github.com/open-telemetry/sig-developer-experience) |
 
-</small>
 
 ### Localization Teams (part of SIG Communications)
-
-<small>
 
 | Name | Meeting Information | Slack Channel | Repositories |
 |------|---------------------|---------------|-------------|
@@ -212,7 +201,6 @@ SIG-specific GitHub discussions.
 | <a id="sig-localization-ptbr"></a>Portuguese (pt-BR) | **Time:** Every second Wednesday at 7:15pm BST<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/1W1jJ4OTm53sbOp7CrbNBMvR_2Z8TQRCkwejqD4f21SE)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-localization-ptbr) | [#otel-localization-ptbr](https://cloud-native.slack.com/archives/C076LET8YSK) |  |
 | <a id="sig-localization-es"></a>Spanish (es-ES) | **Time:** Every second Tuesday at 12:45pm UTC-3, 10:45am UTC-5<br/>**Notes:** [Meeting Notes](https://docs.google.com/document/d/1LAhaPQfZ9IBjXZ1Y3misVV0Gp8Y8CVvoOVChV89Q0s0)<br/>**Calendar:** [Join Meeting Group](https://groups.google.com/a/opentelemetry.io/g/calendar-localization-es) | [#otel-localization-es](https://cloud-native.slack.com/archives/C07PVQVCHA6) |  |
 
-</small>
 
 <!-- endsigs -->
 ## Related groups
