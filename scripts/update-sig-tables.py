@@ -45,12 +45,8 @@ for group in data:
     markdown_content += f"### {group_name}\n\n"
 
     # Table headers
-    if group_name == "Specification SIGs":
-        markdown_content += "| Name | Meeting Time | Meeting Notes | Slack Channel | Meeting Invites Group | [Sponsors](./project-management.md#project-proposal) | [Governance Committee](./community-members.md#governance-committee) Liaison |\n"
-        markdown_content += "|------|--------------|---------------|---------------|-----------------|--------------------------------|--------------------------------|\n"
-    else:
-        markdown_content += "| Name | Meeting Time | Meeting Notes | Slack Channel | Meeting Invites Group | [Governance Committee](./community-members.md#governance-committee) Liaison |\n"
-        markdown_content += "|------|--------------|---------------|---------------|-----------------|--------------------------------|\n"
+    markdown_content += "| Name | Meeting Information | Slack Channel |\n"
+    markdown_content += "|------|---------------------|---------------|\n"
 
     # Table rows for SIGs
     for sig in group['sigs']:
@@ -72,33 +68,32 @@ for group in data:
                 break
 
         invites = sig.get('invites', 'none')
-        tc_sponsors = ",<br/>".join(
-            [f"[{sponsor['name']}](https://github.com/{sponsor['github']})"
-            for sponsor in sig.get('sponsors', [])
-            if sponsor.get('name') and sponsor.get('github')]
-        )
-
-        gc_liaison = "<br/>".join(
-            [f"[{liaison['name']}](https://github.com/{liaison['github']})"
-            for liaison in sig.get('gcLiaison', [])
-            if liaison.get('name') and liaison.get('github')]
-        )
 
         # Construct notes and calendar entries based on type
         if notes_type == "gDoc":
-            notes = f"[Google Doc](https://docs.google.com/document/d/{notes_value})"
+            notes = f"[Meeting Notes](https://docs.google.com/document/d/{notes_value})"
         else:
-            notes = notes_value
+            notes = notes_value if notes_value else ""
         
         if invites == "none":
             calendar = ""
         else:
-            calendar = f"[{invites}](https://groups.google.com/a/opentelemetry.io/g/{invites})"
+            calendar = f"[Calendar]({invites})" if invites else ""
         
-        if group_name == "Specification SIGs":
-            markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meeting} | {notes} | {chats} | {calendar} | {tc_sponsors} | {gc_liaison} | \n"
-        else:
-            markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meeting} | {notes} | {chats} | {calendar} | {gc_liaison} |\n"
+        # Combine meeting time, notes, and calendar into a single cell
+        meeting_info_parts = []
+        if meeting:
+            meeting_info_parts.append(f"**Time:** {meeting}")
+        if notes:
+            meeting_info_parts.append(f"**Notes:** {notes}")
+        if calendar:
+            meeting_invite_link = f"https://groups.google.com/a/opentelemetry.io/g/{invites}" if invites != "none" else ""
+            if meeting_invite_link:
+                meeting_info_parts.append(f"**Calendar:** [Join Meeting Group]({meeting_invite_link})")
+        
+        meeting_info = "<br/>".join(meeting_info_parts) if meeting_info_parts else ""
+        
+        markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meeting_info} | {chats} |\n"
 
     # Add a newline for spacing after the table
     markdown_content += "\n"
