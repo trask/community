@@ -69,13 +69,13 @@ for group in data:
 
         invites = sig.get('invites', 'none')
 
-        # Process repositories
+        # Process repositories with smaller text
         repositories = sig.get('repositories', [])
         repo_links = []
         for repo_url in repositories:
             if repo_url.startswith('https://github.com/'):
                 repo_name = repo_url.split('/')[-1]
-                repo_links.append(f"[{repo_name}]({repo_url})")
+                repo_links.append(f"<sub>[{repo_name}]({repo_url})</sub>")
         
         repos_formatted = "<br/>".join(repo_links) if repo_links else ""
 
@@ -90,16 +90,16 @@ for group in data:
         else:
             calendar = f"[Calendar]({invites})" if invites else ""
         
-        # Combine meeting time, notes, and calendar into a single cell
+        # Combine meeting time, notes, and calendar into a single cell with smaller text
         meeting_info_parts = []
         if meeting:
-            meeting_info_parts.append(f"**Time:** {meeting}")
+            meeting_info_parts.append(f"<sub>**Time:** {meeting}</sub>")
         if notes:
-            meeting_info_parts.append(f"**Notes:** {notes}")
+            meeting_info_parts.append(f"<sub>**Notes:** {notes}</sub>")
         if calendar:
             meeting_invite_link = f"https://groups.google.com/a/opentelemetry.io/g/{invites}" if invites != "none" else ""
             if meeting_invite_link:
-                meeting_info_parts.append(f"**Calendar:** [Join Meeting Group]({meeting_invite_link})")
+                meeting_info_parts.append(f"<sub>**Calendar:** [Join Meeting Group]({meeting_invite_link})</sub>")
         
         meeting_info = "<br/>".join(meeting_info_parts) if meeting_info_parts else ""
         
