@@ -45,8 +45,8 @@ for group in data:
     markdown_content += f"### {group_name}\n\n"
 
     # Table headers
-    markdown_content += "| Name | Meeting Information | Slack Channel |\n"
-    markdown_content += "|------|---------------------|---------------|\n"
+    markdown_content += "| Name | Meeting Information | Slack Channel | Repositories |\n"
+    markdown_content += "|------|---------------------|---------------|-------------|\n"
 
     # Table rows for SIGs
     for sig in group['sigs']:
@@ -68,6 +68,16 @@ for group in data:
                 break
 
         invites = sig.get('invites', 'none')
+
+        # Process repositories
+        repositories = sig.get('repositories', [])
+        repo_links = []
+        for repo_url in repositories:
+            if repo_url.startswith('https://github.com/'):
+                repo_name = repo_url.split('/')[-1]
+                repo_links.append(f"[{repo_name}]({repo_url})")
+        
+        repos_formatted = "<br/>".join(repo_links) if repo_links else ""
 
         # Construct notes and calendar entries based on type
         if notes_type == "gDoc":
@@ -93,7 +103,7 @@ for group in data:
         
         meeting_info = "<br/>".join(meeting_info_parts) if meeting_info_parts else ""
         
-        markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meeting_info} | {chats} |\n"
+        markdown_content += f"| <a id=\"{short_name}\"></a>{name} | {meeting_info} | {chats} | {repos_formatted} |\n"
 
     # Add a newline for spacing after the table
     markdown_content += "\n"
