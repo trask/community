@@ -110,6 +110,17 @@ SSH private keys are available in the SIG GitHub Admins 1Password vault.
 
 [How to provision an Oracle bare metal runner](docs/how-to-provision-bare-metal-runner.md)
 
+##### Proposed Windows bare metal runner
+
+The Windows equivalent is not yet provisioned or available to workflows.
+The proposed configuration uses the same `BM.Standard3.64` hardware with
+Windows Server 2022 Datacenter and the label
+`oracle-bare-metal-64cpu-1024gb-x86-64-windows-2022`.
+It is separate from the GitHub-hosted `otel-windows-latest-8-cores` runner.
+
+- [How to provision an Oracle Windows bare metal runner](docs/how-to-provision-windows-bare-metal-runner.md)
+- [How to use an Oracle Windows bare metal runner](docs/how-to-use-windows-bare-metal-runner.md)
+
 #### Linux/s390x runners
 
 IBM provides linux/s390x runners for build and test automation on this platform. Access to these runners is available to repositories on request; please open a community issue to request access. The following runners are currently available:

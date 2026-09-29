@@ -3,6 +3,9 @@
 The Oracle bare metal runner is a shared benchmarking resource. Workflows must
 clean up after themselves so they don't fill the shared host filesystem.
 
+For Windows, see
+[How to use an Oracle Windows bare metal runner](how-to-use-windows-bare-metal-runner.md).
+
 ## Request access
 
 Access is granted per repository via a community issue. Include:

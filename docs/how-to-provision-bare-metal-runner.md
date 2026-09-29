@@ -5,6 +5,9 @@
 This document describes how to provision an Oracle bare metal instance on
 Oracle Cloud Infrastructure (OCI).
 
+For Windows, see
+[How to provision an Oracle Windows bare metal runner](how-to-provision-windows-bare-metal-runner.md).
+
 1. Create the instance
 2. Set up the instance
 3. Set up GitHub self-hosted runner
